@@ -1,0 +1,100 @@
+﻿<Window x:Class="VisorImagenesStyled.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VisorImagenesStyled"
+        mc:Ignorable="d"
+        Title="Visor de imágenes styled"
+        Height="650" Width="800"
+        MinHeight="650" MinWidth="800">
+
+    <Window.Resources>
+        <Style TargetType="{x:Type TextBlock}" x:Key="StyleTB">
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="FontWeight" Value="Normal"/>
+            <Setter Property="Height" Value="45"/>
+        </Style>
+        <Style BasedOn="{StaticResource StyleTB}" TargetType="{x:Type TextBlock}" x:Key="StyleTBC">
+            <Setter Property="Height" Value="60"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="40"/>
+            <Setter Property="FontWeight" Value="DemiBold"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+        <Style TargetType="{x:Type Image}" x:Key="StyleImg">
+            <Setter Property="Width" Value="150"/></Style>
+        <Style TargetType="{x:Type DockPanel}" x:Key="StyleDP">
+            <Setter Property="Background" Value="LightBlue"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="Height" Value="70"/>
+            <Setter Property="DockPanel.Dock" Value="Bottom"/>
+            <Setter Property="LastChildFill" Value="False"/>
+        </Style>
+        <Style TargetType="{x:Type Border}" x:Key="StyleBor">
+            <Setter Property="CornerRadius" Value="3"/>
+            <Setter Property="Margin" Value="10"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Width" Value="120"/>
+            <Setter Property="DockPanel.Dock" Value="Right"/>
+            <Setter Property="Background" Value="LightGreen"/>
+        </Style>
+        <Style TargetType="{x:Type Button}" x:Key="StyleButt">
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="DockPanel.Dock" Value="Top"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        <Style BasedOn="{StaticResource StyleButt}" TargetType="{x:Type Button}" x:Key="StyleButtBott">
+            <Setter Property="DockPanel.Dock" Value="Bottom"/>
+        </Style>
+    </Window.Resources>
+    
+    <DockPanel>
+        <DockPanel Style="{StaticResource StyleDP}">
+            <TextBlock Style="{StaticResource StyleTB}"
+                Text="Número de imagenes:"/>
+            <TextBlock Style="{StaticResource StyleTB}"
+                Text="Alex Montero"
+                DockPanel.Dock="Right"/>
+        </DockPanel>
+        <Border Style="{StaticResource StyleBor}">
+            <DockPanel LastChildFill="False">
+                <Button Style="{StaticResource StyleButt}"
+                    Content="Añadir imagen"/>
+                <Button Style="{StaticResource StyleButt}"
+                    Content = "Eliminar imagen"/>
+                <Button Style="{StaticResource StyleButt}"
+                    Content="Eliminar todas"/>
+                <Button Style="{StaticResource StyleButtBott}"
+                    Content="Recordar"/>
+                <Button Style="{StaticResource StyleButtBott}"
+                    Content="Rotar"/>
+            </DockPanel>
+        </Border>
+        <TextBlock Style="{StaticResource StyleTBC}"
+                DockPanel.Dock="Top"
+                Text="Visor de imágenes"/>
+        <WrapPanel Margin="10">
+            <Image Style="{StaticResource StyleImg}"
+                Source="/img/episodioIV.jpg"/>
+            <Image Style="{StaticResource StyleImg}"
+                Source="/img/episodioIV.jpg" />
+            <Image Style="{StaticResource StyleImg}"
+                Source="/img/episodioIV.jpg" />
+            <Image Style="{StaticResource StyleImg}"
+                Source="/img/episodioIV.jpg" />
+            <Image Style="{StaticResource StyleImg}"
+                Source="/img/episodioIV.jpg" />
+            <Image Style="{StaticResource StyleImg}"
+                Source="/img/episodioIV.jpg" />
+            <Image Style="{StaticResource StyleImg}"
+                Source="/img/episodioIV.jpg" />
+            <Image Style="{StaticResource StyleImg}"
+                Source="/img/episodioIV.jpg" />
+            <Image Style="{StaticResource StyleImg}"
+                Source="/img/episodioIV.jpg" />
+        </WrapPanel>
+    </DockPanel>
+</Window>
